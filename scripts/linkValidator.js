@@ -1,0 +1,104 @@
+/*
+ * usage:
+ * note: Windows path separator used below! (to avoid error with parsing of this comment block)
+ * " node .\scripts\linkValidator.js 'docs\**\*.md?(x)' "
+ *
+ * for testing:
+ * "node linkValidator.js .\linkValidator.test.md"
+ */
+
+const fs = require('fs');
+const glob = require('glob');
+
+const red = (text) => `\x1b[31m${text}\x1b[0m`;
+
+/** @type {Array<{ errType: string, fileName: string, lineContent: string, lineNo: number }>} */
+const errors = [];
+const wikiUrl = 'wiki.ecu.tech';
+
+/**
+ * Check whether links are adhering to custom rules
+ * @param {Array<string>} files - List of file names to check
+ */
+const validateDocRules = (files) => {
+  if (files.length === 0) {
+    console.log('UsageError: no files qualify!');
+    process.exit(1);
+  }
+
+  const fileMatchIndicator = files.length > 1 ? `${files.length} files` : files[0];
+
+  console.log(`Validating rules for URL links in: ${fileMatchIndicator}`);
+
+  // * Check whether links are not staring with "https://wiki.ecu.tech"
+  // Note: dynamic javascript string interpolation is used here (see https://www.crstin.com/js-regex-interpolation/)
+  const regexPatternDynAbsLink = new RegExp(`\\]\\((https|http):\\/\\/${wikiUrl}`, 'i');
+  // hint: test static regex via https://regex101.com
+  // * Check whether links are not using a "numbered prefix" like "(/01-blah)"
+  const regexPatternStatNumPrefix = new RegExp(/\(.*\/\d\d\-.*\)/, 'i');
+  // * Check whether links are not markdown links, meaning ending with .md or .mdx like "(/01-blah.md)"
+  const regexPatternStatMdLink = new RegExp(/\(.*\.(md|mdx)\)/, 'i');
+
+  files.forEach((fileName) => {
+    const lines = fs.readFileSync(fileName, 'utf8').split('\n');
+
+    lines.forEach((line) => {
+      if (regexPatternDynAbsLink.test(line)) {
+        errors.push({
+          errType: 'AbsLink',
+          fileName,
+          lineContent: line,
+          lineNo: lines.indexOf(line) + 1,
+        });
+      }
+      if (regexPatternStatMdLink.test(line)) {
+        errors.push({
+          errType: 'MdLink',
+          fileName,
+          lineContent: line,
+          lineNo: lines.indexOf(line) + 1,
+        });
+      }
+      if (regexPatternStatNumPrefix.test(line)) {
+        errors.push({
+          errType: 'NumPrefix',
+          fileName,
+          lineContent: line,
+          lineNo: lines.indexOf(line) + 1,
+        });
+      }
+    });
+  });
+};
+
+/**
+ * Load all md and mdx files from / docs and process them
+ */
+const main = () => {
+  // TODO: add try + catch?
+  const args = process.argv.slice(2);
+  const files = glob.sync(args[0]);
+
+  // process
+  validateDocRules(files);
+
+  if (errors.length === 0) {
+    console.log('✅ Ok');
+    process.exit(0);
+  }
+
+  console.log('❌ Failed\n');
+  console.log(red(`Number of Errors found: ${errors.length}`));
+  errors.forEach((error) => {
+    console.log(
+      `[${error.fileName}][Line:${error.lineNo}][Type:${
+        error.errType
+      }]" ${error.lineContent.trim()}"`,
+    );
+  });
+
+  process.exit(2);
+};
+
+// main
+main();

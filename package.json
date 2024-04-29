@@ -1,0 +1,65 @@
+{
+  "name": "wiki",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start --host 0.0.0.0",
+    "build": "docusaurus build",
+    "lint": "npm run lint:biome && npm run lint:ts && npm run lint:links && npm run lint:md",
+    "lint:code": "npm run lint:biome && npm run lint:ts",
+    "lint:fix": "biome format --write . && biome check --apply .",
+    "lint:fix:unsafe": "biome check . --apply-unsafe .",
+    "lint:ts": "tsc",
+    "lint:links": "node scripts/linkValidator.js 'docs/**/*.md?(x)'",
+    "lint:md": "npx -y markdownlint-cli docs",
+    "lint:biome": "biome check .",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "pdf": "docusaurus-prince-pdf -u http://localhost:3000 -o static/pdf/wiki.ecu.pdf"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.1.1",
+    "@docusaurus/plugin-client-redirects": "^3.1.1",
+    "@docusaurus/preset-classic": "^3.1.1",
+    "@easyops-cn/docusaurus-search-local": "^0.40.1",
+    "@mdx-js/react": "^3.0.1",
+    "candied": "^2.2.0",
+    "clsx": "^2.1.0",
+    "prism-react-renderer": "^2.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@docusaurus/module-type-aliases": "^3.1.1",
+    "@docusaurus/tsconfig": "^3.1.1",
+    "@docusaurus/types": "^3.1.1",
+    "@tsconfig/docusaurus": "^2.0.2",
+    "@types/node": "^20.11.20",
+    "docusaurus-prince-pdf": "^1.2.1",
+    "raw-loader": "^4.0.2",
+    "typescript": "^5.3.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}
