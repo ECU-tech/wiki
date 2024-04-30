@@ -22,7 +22,7 @@ const pdfUrl = `${isBuild ? url : 'http://localhost:3000'}/pdf/${pdfName}?v=${pd
 
 const config: Config = {
   title: 'ECU-tech Wiki',
-  tagline: 'Free Open Motorsports ECU',
+  tagline: 'Free Open Source ECU',
   url,
   baseUrl: '/',
 
