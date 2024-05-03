@@ -4,9 +4,9 @@ Currently there are a few sweet options for hardware, all have the same brain, b
 
 ## BRAIN
 
-### Polygonus 🧠
+### Delta 🧠
 
-This is where the real action happens. Designed to be consistent across different base board applications to simplify design, ensure repeatability, and reduce cost. The Polygonus (said Puh-LIG-on-us) Brain is on all ECU-tech ECUs.
+This is where the real action happens. Designed to be consistent across different base board applications to simplify design, ensure repeatability, and reduce cost. The Delta (said Puh-LIG-on-us) Brain is on all ECU-tech ECUs.
 
 ![image](./Which-Hardware-For-Me-Images/BRAIN-ECU-tech.jpg)
 
