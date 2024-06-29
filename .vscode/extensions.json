@@ -1,8 +1,0 @@
-{
-  // NOTE: keep this in sync with: .devcontainer/devcontainer.json
-  "recommendations": [
-    "davidanson.vscode-markdownlint",
-    "streetsidesoftware.code-spell-checker",
-    "biomejs.biome"
-  ]
-}
