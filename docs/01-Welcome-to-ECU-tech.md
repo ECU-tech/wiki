@@ -1,9 +1,3 @@
----
-slug: /
-# (Docusaurus 2.4.1 requires a root doc/page to have a "slug: /" directive, otherwise 404 is assumed as a welcome message)
-# (also numbered prefixes are NOT to be used in links, because Docusaurus 2.4.1 matches them automatically )
----
-
 # Welcome to ECU-tech
 
 Fome is a new project intending to deliver a user focused high feature ECU with open source hardware options and open firmware that give control back to the user, owner and driver.
