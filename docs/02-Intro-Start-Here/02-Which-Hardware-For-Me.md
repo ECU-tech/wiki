@@ -4,11 +4,10 @@ Currently there are a few sweet options for hardware, all have the same brain, b
 
 ## BRAIN
 
-### Delta 🧠
+### RUSEFI 🧠
 
-This is where the real action happens. Designed to be consistent across different base board applications to simplify design, ensure repeatability, and reduce cost. The Delta (said Puh-LIG-on-us) Brain is on all ECU-tech ECUs.
+This is where the real action happens. Designed to be consistent across different base board applications to simplify design, ensure repeatability, and reduce cost. The rusEFI Brain is on all ECU-tech ECUs.
 
-![image](./Which-Hardware-For-Me-Images/BRAIN-ECU-tech.jpg)
 
 ## BASEBOARDS
 
@@ -16,19 +15,17 @@ This is where the real action happens. Designed to be consistent across differen
 
 For the M50TU and M60 engines (and harnesses), this plug and play ECU-tech ECU will allow you to use your turn signals (cringe jokes). No but really, E36 Chassis is hot right now. Street/Drag/Drift you name it. Everyone who had an S-Chassis now wants an E36. Hell you could use this in other chassis too.
 
-![image](./Which-Hardware-For-Me-Images/M50TU_M60-ECU-tech.jpg)
 
 ### Miata
 
-You love big hair, short shorts, and tops off 24/7 (and stereotypes too). Luckily ECU-tech has you in mind with a wide arrangement of options fot the Mazda Miata Platform. [BeerMoneyMotorsports](https://www.beermoneymotorsports.com/collections/miata-mx5-ecus) in sexy *billet* cases. NA,NB, 1.6, 1.8, VVT, turbo, ITBs, etc. You name, it, and its covered.
+You love big hair, short shorts, and tops off 24/7 (and stereotypes too). Luckily ECU-tech has you in mind with a wide arrangement of options fot the Mazda Miata Platform. in sexy *billet* cases. NA,NB, 1.6, 1.8, VVT, turbo, ITBs, etc. You name, it, and its covered.
 
-![image](./Which-Hardware-For-Me-Images/Miata-ECU-tech.png)
 
 ### Harley
 
-Whether you're cruising the highways, crushing that 1/4 mile, or just want more power, the Harley ECU-tech ECU (designed for 2021+ bikes) is an excellent choice. [NMSTEC](https://www.nmstec.ca/product/hdrevb/) has them available ready to go, also in a very nice *billet* case.
+Whether you're cruising the highways, crushing that 1/4 mile, or just want more power, the Harley ECU-tech ECU (designed for 2021+ bikes) is an excellent choice. has them available ready to go, also in a very nice *billet* case.
 
-![image](./Which-Hardware-For-Me-Images/Harley-ECU-tech.png)
+!
 
 ## Coming Soon
 
